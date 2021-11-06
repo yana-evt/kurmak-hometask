@@ -23,6 +23,8 @@
 
   <body
     class="body">
+  <div
+    class="mask">
 
     <header
       class="header">
@@ -30,8 +32,8 @@
       <a
         aria-label="Перейти к основному контенту"
         href="#main"
-        class="skiplink">
-        На главную
+        class="skiplink blue-control">
+        К основному содержанию
       </a>
 
       <div
@@ -56,52 +58,66 @@
       </div>
 
       <div
-        class="header__search">
-        <form role="search">
-          <input type="search" aria-label="Поиск по сайту музея">
-          <input type="submit" value="Search">
-        </form>
-      </div>
+        class="header__wrapper-right">
 
-      <nav
-        aria-label="Выбрать язык (это пока не работает, но потом заработает)"
-        class="header__lang lang">
-        <span
-          class="lang__button lang__button--active">
+        <div
+          class="header__search">
+
+          <form
+            role="search">
+
+            <input
+              type="search"
+              aria-label="Поиск по сайту музея"
+              class="search__input">
+
+            <input
+              type="submit"
+              value="Поиск"
+              class="search__submit">
+          </form>
+        </div>
+
+        <nav
+          aria-label="Выбрать язык (это пока не работает, но потом заработает)"
+          class="header__lang lang">
           <span
-            aria-hidden="true">
-            RU
+            class="lang__button lang__button--active blue-control blue-control--active">
+            <span
+              aria-hidden="true">
+              RU
+            </span>
+            <span
+              class="visually-hidden">
+              Русский
+            </span>
           </span>
+          <a
+            href="#"
+            hreflang="en"
+            aria-label="English"
+            class="lang__button blue-control">
+            EN
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          aria-haspopup="dialog">
+
           <span
             class="visually-hidden">
-            Русский
+            Войти в личный кабинет
           </span>
-        </span>
-        <a
-          href="#"
-          hreflang="en"
-          aria-label="English"
-          class="lang__button">
-          EN
-        </a>
-      </nav>
 
-      <button
-        type="button"
-        aria-haspopup="dialog">
-
-        <span
-          class="visually-hidden">
-          Войти в личный кабинет
-        </span>
-
-        <img
-          src=""
-          alt=""
-          width="46"
-          height="46"
-          role="presentation">
-      </button>
+          <img
+            src=""
+            alt=""
+            width="46"
+            height="46"
+            role="presentation">
+        </button>
+      </div>
     </header>
 
     <main
@@ -128,10 +144,10 @@
             class="nav__item">
 
             <a
-              aria-label="Перейти к информации для посетителей с ограниченными возможностями"
-              href=""
+              aria-label="Перейти к разделу музей"
+              href="#mainMuseum"
               class="nav__link">
-              Посетителям с ограниченными возможностями
+              Музей
             </a>
           </li>
 
@@ -139,8 +155,8 @@
             class="nav__item">
 
             <a
-            aria-label="Перейти к информации для посетителей"
-            href=""
+            aria-label="Перейти к информации для посетителей (в макете этого раздела нет, будет пусто)"
+            href="#"
             class="nav__link">
             Посетителям
             </a>
@@ -150,21 +166,10 @@
             class="nav__item">
 
             <a
-              aria-label="Перейти к разделу выставки и события"
-              href=""
+              aria-label="Перейти к разделу выставки и события (а этот раздел в макете есть, но я его не успела сделать)"
+              href="#mainExhibitions"
               class="nav__link">
               Выставки и события
-            </a>
-          </li>
-
-          <li
-            class="nav__item">
-
-            <a
-              aria-label="Перейти к разделу музей"
-              href=""
-              class="nav__link">
-              Музей
             </a>
           </li>
 
@@ -186,7 +191,7 @@
               aria-label="Перейти к разделу экскурсии и лекции в прямом эфире"
               href=""
               class="nav__link">
-              Экскурсии и лекции в прямом эфире
+              Онлайн события
             </a>
           </li>
         </ul>
@@ -201,19 +206,16 @@
       </div>
 
       <section
-        aria-labelledby="headingExhibitions">
+        id="mainExhibitions"
+        aria-label="Пока здесь пусто, но скоро будет секция с выставками и событиями и фильтром впридачу">
 
-        <h2
-          id="headingExhibitions">
+        <h2>
           Выставки и события
         </h2>
-
-        <p>
-          Пока здесь пусто, но скоро будет секция с выставками и событиями и фильтром впридачу
-        </p>
       </section>
 
       <section
+        id="mainMuseum"
         aria-labelledby="headingAboutMuseum"
         class="main__about-museum about-museum">
 
@@ -232,7 +234,7 @@
             role="tab"
             aria-controls="panel1"
             tabindex="0"
-            class="about-museum__tab">
+            class="about-museum__tab blue-control">
 
             Здания
           </button>
@@ -242,7 +244,7 @@
             role="tab"
             aria-controls="panel2"
             tabindex="-1"
-            class="about-museum__tab">
+            class="about-museum__tab blue-control">
 
             История
           </button>
@@ -534,8 +536,16 @@
         aria-labelledby="headingStreams">
 
         <h2
-          id="headingStreams">
+          id="headingStreams"
+          class="main__streams">
           Онлайн-трансляции
+
+          <a
+            aria-label="Пропустить содержимое видео-плеера"
+            href="#mainZoomExhibitions"
+            class="skiplink-iframe blue-control">
+            К следующему разделу
+          </a>
         </h2>
 
         <iframe
@@ -550,6 +560,7 @@
       </section>
 
       <section
+        id="mainZoomExhibitions"
         aria-labelledby="headingZoomExhibitions">
 
         <h2
@@ -615,6 +626,13 @@
             class="visually-hidden">
             Дополнительная навигация
           </h2>
+
+          <a
+            aria-label="Перейти к информации для посетителей с ограниченными возможностями"
+            href=""
+            class="nav-secondary__link">
+            Посетителям с ограниченными возможностями
+          </a>
 
           <a
             aria-label="Перейти к информации о билетах и льготах"
@@ -729,7 +747,7 @@
               class="error"
               id="emailInputError">
 
-              Кажется, вы ошиблись. Введите email снова, пожалуйста.
+              Ошибка: неверно введен e-mail.
             </span>
 
             <input
@@ -774,49 +792,63 @@
           Форма для входа в личный кабинет
         </h3>
 
-        <label
-          for="userLogin">
-          Введите логин:
-        </label>
+        <div
+          class="modal-login__wrapper-input">
 
-        <input
-          required
-          id="userLogin"
-          aria-label="Логин"
-          type="text"
-          aria-required="true"
-          aria-describedby="textInputLoginError">
+          <label
+            for="userLogin"
+            class="modal-login__label">
+            Введите логин:
+          </label>
 
-        <span
-          class="error"
-          id="textInputLoginError">
+          <input
+            required
+            id="userLogin"
+            aria-label="Логин"
+            type="text"
+            aria-required="true"
+            aria-describedby="textInputLoginError"
+            class="modal-login__input">
 
-          Кажется, вы ошиблись. Введите логин снова, пожалуйста.
-        </span>
+          <span
+            id="textInputLoginError"
+            class="error">
 
-        <label
-          for="userPassword">
-          Введите пароль:
-        </label>
+            Ошибка: неверный логин.
+          </span>
+        </div>
 
-        <input
-          required
-          id="userPassword"
-          aria-label="Пароль"
-          type="text"
-          aria-required="true"
-          aria-describedby="textInputPasswordError">
+        <div
+          class="modal-login__wrapper-input">
 
-        <span class="error" id="textInputPasswordError">
+          <label
+            for="userPassword"
+            class="modal-login__label">
+            Введите пароль:
+          </label>
 
-          Кажется, вы ошиблись. Введите пароль снова, пожалуйста.
-        </span>
+          <input
+            required
+            id="userPassword"
+            aria-label="Пароль"
+            type="text"
+            aria-required="true"
+            aria-describedby="textInputPasswordError"
+            class="modal-login__input">
+
+          <span
+            id="textInputPasswordError"
+            class="error">
+
+            Ошибка: неверный пароль.
+          </span>
+        </div>
       </form>
 
       <button
         type="button"
         aria-label="После нажатии на эту кнопку ваша форма была отправлена и вы попали на страницу личного кабинета"
-        class="modal-login__enter">
+        class="modal-login__enter blue-control">
         Войти
       </button>
 
@@ -827,5 +859,6 @@
         Х
       </button>
     </div>
+  </div>
   </body>
 </html>

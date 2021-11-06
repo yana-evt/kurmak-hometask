@@ -2,17 +2,34 @@
 :root {
   --basic-bg: #FFFFFF;
   --secondary-bg: rgba(0, 0, 0, 0.43);
+  --light-bg: #F9F9FB;
+  --accent-bg: #5D16D5;
 
   --basic-text: #000000;
   --invertedBasic-text: #FFFFFF;
+  --alert-text: tomato;
 
   --basic-buttons-bg: #C7D2E9;
-  --accent-buttons-bg: #5D16D5;
+  --basic-buttons-bg-hover: #9BAFD8;
 
   --basic-white: #FFFFFF;
   --basic-black: #000000;
 
   --main-font: 'Roboto', Arial, Helvetica, sans-serif;
+
+  --basic-font-size: 22px;
+  --s-font-size: 16px;
+  --m-font-size: 18px;
+  --l-font-size: 26px;
+  --xl-font-size: 50px;
+  --form-font-size: 30px;
+
+  --basic-line-height: 26px;
+  --s-line-height: 19px;
+  --m-line-height: 21px;
+  --l-line-height: 30px;
+  --xl-line-height: 59px;
+  --form-line-height: 35px;
 }
 
 html {
@@ -23,23 +40,34 @@ html {
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: 2px solid #5D16D5;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
 img {
   max-width: 100%;
   height: auto;
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 body {
   padding: 0;
   font-family: var(--main-font);
-  font-size: 18px;
-  line-height: 30px;
+  font-size: var(--basic-font-size);
+  line-height: var(--basic-line-height);
   font-weight: 400;
   color: var(--basic-text);
   background-color: var(--basic-bg);
 
   min-height: 100%;
-  min-width: 500px;
+  width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
@@ -59,6 +87,79 @@ body {
   overflow: hidden;
 }
 
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 118px;
+}
+
+.header__wrapper-right {
+  display: flex;
+}
+
+/* Nav */
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__item {
+  height: 48px;
+}
+
+.nav__link {
+  color: var(--basic-text);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+.nav__link:hover {
+  background-color: var(--basic-buttons-bg);
+  transition: background-color 0.3s;
+}
+
+/* Search */
+
+.search__input {
+  font-size: var(--basic-font-size);
+  width: 295px;
+  height: 48px;
+  border: 2px solid var(--basic-black);
+  border-radius: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: var(--light-bg);
+}
+
+.search__submit {
+  font-size: var(--basic-font-size);
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 48px;
+  border: 2px solid var(--basic-black);
+  border-radius: 4px;
+  background-color: var(--light-bg);
+}
+
+.search__submit:hover {
+  background-color: var(--basic-buttons-bg);
+  cursor: pointer;
+}
+
+.search__submit:active {
+  opacity: 0.7;
+}
+
+/* Skiplinks */
+
 .skiplink {
   position: absolute;
   top: -200px;
@@ -69,6 +170,48 @@ body {
 .skiplink:focus {
   top: 20px;
 }
+
+.main__streams {
+  position: relative;
+}
+
+.skiplink-iframe {
+  position: absolute;
+  top: 0;
+  left: -1000px;
+  transition: left 0.2s;
+}
+
+.skiplink-iframe:focus {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Blue-control */
+
+.blue-control {
+  font-size: 22px;
+  color: var(--basic-black);
+  background-color: var(--basic-buttons-bg);
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.blue-control:hover {
+  background-color: var(--basic-buttons-bg-hover);
+}
+
+.blue-control--active {
+  text-decoration: none;
+}
+
+.blue-control--active:hover {
+  background-color: var(--basic-buttons-bg);
+}
+
+/* Museum buildings card */
 
 .museum-buildings__card {
   position: relative;
@@ -82,4 +225,60 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+/* Modal */
+
+.modal-login {
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 580px;
+  padding: 70px 150px;
+  background-color: var(--basic-white);
+  border-radius: 8px;
+}
+
+.modal-login__wrapper-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-login__label {
+  font-size: var(--form-font-size);
+  line-height: var(--form-line-height);
+  padding-bottom: 10px;
+}
+
+.modal-login__input {
+  font-size: var(--form-font-size);
+  line-height: var(--form-line-height);
+  height: 65px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.modal-login__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--invertedBasic-text);
+  background-color: var(--accent-bg);
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  /*visibility: hidden;*/
+  color: var(--alert-text);
+  font-size: var(--s-font-size);
 }
