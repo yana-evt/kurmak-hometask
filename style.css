@@ -1,3 +1,85 @@
-.example {
-  color: tomato;
+
+:root {
+  --basic-bg: #FFFFFF;
+  --secondary-bg: rgba(0, 0, 0, 0.43);
+
+  --basic-text: #000000;
+  --invertedBasic-text: #FFFFFF;
+
+  --basic-buttons-bg: #C7D2E9;
+  --accent-buttons-bg: #5D16D5;
+
+  --basic-white: #FFFFFF;
+  --basic-black: #000000;
+
+  --main-font: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  font-family: var(--main-font);
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--basic-text);
+  background-color: var(--basic-bg);
+
+  min-height: 100%;
+  min-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.skiplink {
+  position: absolute;
+  top: -200px;
+  left: 2px;
+  transition: top 0.2s;
+}
+
+.skiplink:focus {
+  top: 20px;
+}
+
+.museum-buildings__card {
+  position: relative;
+}
+
+.museum-buildings__card-link:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

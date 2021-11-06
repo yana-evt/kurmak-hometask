@@ -1,44 +1,831 @@
 <!DOCTYPE html>
+
 <html
   lang="ru">
-<head>
-  <meta
-    charset="utf-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1">
 
-  <title>
-    Яна Евтухова
-  </title>
+  <head>
+    <meta
+      charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1">
 
-<!--  <link-->
-<!--    rel="preconnect"-->
-<!--    href="https://fonts.gstatic.com">-->
+    <title>
+      Яна Евтухова
+    </title>
 
-<!--  <link-->
-<!--    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"-->
-<!--    rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-  <link
-    href="style.css"
-    rel="stylesheet">
-</head>
+    <link href="style.css" rel="stylesheet">
+  </head>
 
-<body>
+  <body
+    class="body">
 
-<header>
-  <span class="example">
-    Hello, world!
-  </span>
-</header>
+    <header
+      class="header">
 
-<main>
+      <a
+        aria-label="Перейти к основному контенту"
+        href="#main"
+        class="skiplink">
+        На главную
+      </a>
 
-</main>
+      <div
+        class="header__logo logo">
 
-<footer>
+        <a
+          href="#"
+          aria-describedby="logoLinkText"
+          class="logo__museum">
+          <span
+            id="logoLinkText"
+            class="visually-hidden">
+            Перейти на главную страницу музея
+          </span>
+          <img
+            src=""
+            alt=""
+            width="200"
+            height="42"
+            role="presentation">
+        </a>
+      </div>
 
-</footer>
-</body>
+      <div
+        class="header__search">
+        <form role="search">
+          <input type="search" aria-label="Поиск по сайту музея">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+
+      <nav
+        aria-label="Выбрать язык (это пока не работает, но потом заработает)"
+        class="header__lang lang">
+        <span
+          class="lang__button lang__button--active">
+          <span
+            aria-hidden="true">
+            RU
+          </span>
+          <span
+            class="visually-hidden">
+            Русский
+          </span>
+        </span>
+        <a
+          href="#"
+          hreflang="en"
+          aria-label="English"
+          class="lang__button">
+          EN
+        </a>
+      </nav>
+
+      <button
+        type="button"
+        aria-haspopup="dialog">
+
+        <span
+          class="visually-hidden">
+          Войти в личный кабинет
+        </span>
+
+        <img
+          src=""
+          alt=""
+          width="46"
+          height="46"
+          role="presentation">
+      </button>
+    </header>
+
+    <main
+      id="main"
+      class="main">
+
+      <h1
+        class="visually-hidden">
+        Главная страница сайта государственного музея имени А.С.Пушкина
+      </h1>
+
+      <nav
+        class="main__navigation nav">
+
+        <h2
+          class="visually-hidden">
+          Главная навигация по сайту музея
+        </h2>
+
+        <ul
+          class="nav__list">
+
+          <li
+            class="nav__item">
+
+            <a
+              aria-label="Перейти к информации для посетителей с ограниченными возможностями"
+              href=""
+              class="nav__link">
+              Посетителям с ограниченными возможностями
+            </a>
+          </li>
+
+          <li
+            class="nav__item">
+
+            <a
+            aria-label="Перейти к информации для посетителей"
+            href=""
+            class="nav__link">
+            Посетителям
+            </a>
+          </li>
+
+          <li
+            class="nav__item">
+
+            <a
+              aria-label="Перейти к разделу выставки и события"
+              href=""
+              class="nav__link">
+              Выставки и события
+            </a>
+          </li>
+
+          <li
+            class="nav__item">
+
+            <a
+              aria-label="Перейти к разделу музей"
+              href=""
+              class="nav__link">
+              Музей
+            </a>
+          </li>
+
+          <li
+            class="nav__item">
+
+            <a
+              aria-label="Перейти к разделу онлайн-трансляции"
+              href=""
+              class="nav__link">
+              Онлайн-трансляции
+            </a>
+          </li>
+
+          <li
+            class="nav__item">
+
+            <a
+              aria-label="Перейти к разделу экскурсии и лекции в прямом эфире"
+              href=""
+              class="nav__link">
+              Экскурсии и лекции в прямом эфире
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="main__slider">
+        <span
+          class="visually-hidden">
+          Чуть позже здесь появится красивый доступный слайдер
+        </span>
+      </div>
+
+      <section
+        aria-labelledby="headingExhibitions">
+
+        <h2
+          id="headingExhibitions">
+          Выставки и события
+        </h2>
+
+        <p>
+          Пока здесь пусто, но скоро будет секция с выставками и событиями и фильтром впридачу
+        </p>
+      </section>
+
+      <section
+        aria-labelledby="headingAboutMuseum"
+        class="main__about-museum about-museum">
+
+        <h2
+          id="headingAboutMuseum"
+          class="about-museum__heading">
+          Музей
+        </h2>
+
+        <div
+          role="tablist"
+          class="about-museum__tab-list">
+
+          <button
+            id="heading1"
+            role="tab"
+            aria-controls="panel1"
+            tabindex="0"
+            class="about-museum__tab">
+
+            Здания
+          </button>
+
+          <button
+            id="heading2"
+            role="tab"
+            aria-controls="panel2"
+            tabindex="-1"
+            class="about-museum__tab">
+
+            История
+          </button>
+        </div>
+
+        <section
+          id="section1"
+          role="tabpanel"
+          aria-labelledby="heading1"
+          class="about-museum__buildings museum-buildings">
+
+          <ul
+            class="museum-buildings__list">
+
+            <li
+              aria-labelledby="cardHeading1"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading1"
+                class="museum-buildings__card-heading">
+                Мемориальная Квартира С.Т. Рихтера
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                ул. Большая Бронная, 2/6, 16 этаж, кв. 58
+              </p>
+
+              <a
+                aria-label="Подробнее о мемеориальной квартире С.Т. Рихтера"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+
+            <li
+              aria-labelledby="cardHeading2"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading2"
+                class="museum-buildings__card-heading">
+                ЦЭВ «Мусейон»
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)
+              </p>
+
+              <a
+                aria-label="Подробнее о ЦЭВ «Мусейон»"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+
+            <li
+              aria-labelledby="cardHeading3"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading3"
+                class="museum-buildings__card-heading">
+                Усадьба Лопухиных
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                Малый Знаменский пер., 3/5с4
+              </p>
+
+              <a
+                aria-label="Подробнее об усадьбе Лопухиных"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+
+            <li
+              aria-labelledby="cardHeading4"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading4"
+                class="museum-buildings__card-heading">
+                Учебный музей
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                ул. Чаянова, 15
+              </p>
+
+              <a
+                aria-label="Подробнее об учебном музее"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+
+            <li
+              aria-labelledby="cardHeading5"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading5"
+                class="museum-buildings__card-heading">
+                Отдел личных коллекций
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                ул. Волхонка, 10
+              </p>
+
+              <a
+                aria-label="Подробнее об отделе личных коллекций"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+
+            <li
+              aria-labelledby="cardHeading6"
+              class="museum-buildings__card">
+
+              <img
+                src=""
+                alt=""
+                width="312"
+                height="148"
+                role="presentation">
+
+              <h3
+                id="cardHeading6"
+                class="museum-buildings__card-heading">
+                Галерея
+              </h3>
+
+              <p
+                class="museum-buildings__card-address">
+                ул. Волхонка, 14
+              </p>
+
+              <a
+                aria-label="Подробнее о галерее"
+                href="#"
+                target="_blank"
+                class="museum-buildings__card-link">
+
+                Подробнее
+
+                <span
+                  class="visually-hidden">
+
+                  Ссылка откроется в новом окне
+                </span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          id="section2"
+          role="tabpanel"
+          aria-labelledby="heading2"
+          class="hidden about-museum__history museum-history">
+
+          <p
+            class="museum-history__description">
+            Государственный музей изобразительных искусств имени А.С. Пушкина – одно из крупнейших в России художественных
+            собраний зарубежного искусства с древнейших времен до наших дней.
+            <br>
+            В современной экспозиции представлены обширная учебная коллекция тонированных гипсовых слепков с произведений
+            Античности, Средних веков и эпохи Возрождения, а также собрание подлинных произведений живописи, скульптуры,
+            графики и декоративно-прикладного искусства.
+            <br>
+            В залах первого этажа Главного здания представлены: произведения искусства Древнего Египта, Античности, собрание
+            европейской живописи VIII–XVIII веков; два зала – Итальянский и Греческий дворики – занимают слепки. На втором
+            этаже Главного здания в залах размещены слепки произведений искусства Древней Греции, Рима, Средних веков
+            и Возрождения.
+            <br>
+            В начале 2017 года музей определил новое направление своей деятельности – Пушкинский XXI, – ориентированное на
+            современное российское и западное искусство во всех аспектах – выставочном, образовательном и исследовательском.
+            Таким образом, ГМИИ им. А.С. Пушкина представляет собой открытую, интерактивную сцену, демонстрирующую развитие
+            мировой культуры с древности до наших дней, живое, знакомое с детства пространство для получения знаний
+            и общения.
+            <br>
+          </p>
+
+          <a
+            href="#"
+            target="_blank">
+
+            Читать далее
+
+            <span
+              class="visually-hidden">
+
+              Ссылка откроется в новом окне
+            </span>
+          </a>
+        </section>
+      </section>
+
+      <section
+        aria-labelledby="headingStreams">
+
+        <h2
+          id="headingStreams">
+          Онлайн-трансляции
+        </h2>
+
+        <iframe
+          width="1030"
+          height="611"
+          src="https://www.youtube.com/embed/-IDcL3CY0Tg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </section>
+
+      <section
+        aria-labelledby="headingZoomExhibitions">
+
+        <h2
+          id="headingZoomExhibitions">
+          Экскурсии и лекции в прямом эфире
+        </h2>
+
+        <p>
+          С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей,
+          оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе Zoom; предусмотрен формат живого
+          общения с возможностью задавать вопросы экскурсоводу (лектору).
+
+          <a
+            aria-label="Узнать подробнее о наших виртуальных мероприятиях"
+            href="#"
+            target="_blank">
+
+            Подробнее.
+
+            <span
+              class="visually-hidden">
+
+              Ссылка откроется в новом окне
+            </span>
+          </a>
+        </p>
+
+        <p>
+          Мы будем благодарны за любое
+
+          <a
+            aria-label="Перейти по ссылке, чтобы сделать пожертвование"
+            href="#"
+            target="_blank">
+
+            пожертвование
+
+            <span
+              class="visually-hidden">
+
+              Ссылка откроется в новом окне
+            </span>
+          </a>
+
+          . Все поступившие средства будут направлены на организацию
+          онлайн-проектов для наших посетителей.
+        </p>
+      </section>
+    </main>
+
+    <footer
+      class="footer">
+
+      <div
+        class="footer__wrapper-left">
+
+        <section
+          aria-labelledby="navigationSecondary"
+          class="footer__nav nav-secondary">
+
+          <h2
+            id="navigationSecondary"
+            class="visually-hidden">
+            Дополнительная навигация
+          </h2>
+
+          <a
+            aria-label="Перейти к информации о билетах и льготах"
+            href=""
+            class="nav-secondary__link">
+            Билеты и льготы
+          </a>
+
+          <a
+            aria-label="Перейти к информации о противодействии коррупции"
+            href=""
+            class="nav-secondary__link">
+            Противодействие коррупции
+          </a>
+        </section>
+
+        <section
+          aria-labelledby="socialList"
+          class="footer__social-list">
+
+          <h2
+            id="socialList"
+            class="visually-hidden">
+            Дополнительная навигация
+          </h2>
+
+          <a
+            href="#"
+            target="_blank"
+            class="social-item__link">
+
+            <img
+              src=""
+              alt=""
+              role="presentation">
+
+            <span
+              class="visually-hidden">
+              Ссылка на почту музея, откроется в новом окне
+            </span>
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            class="social-item__link">
+
+            <img
+              src=""
+              alt=""
+              role="presentation">
+
+            <span
+              class="visually-hidden">
+              Ссылка на Telegram музея, откроется в новом окне
+            </span>
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            class="social-item__link">
+
+            <img
+              src=""
+              alt=""
+              role="presentation">
+
+            <span
+              class="visually-hidden">
+              Ссылка на Facebook музея, откроется в новом окне
+            </span>
+          </a>
+        </section>
+      </div>
+
+      <div
+        class="footer__wrapper-right">
+
+        <section
+          aria-labelledby="subscriptionNews">
+
+          <h2
+            id="subscriptionNews"
+            class="visually-hidden">
+            Подписаться на новости
+          </h2>
+
+          <form
+            aria-labelledby="formSubscriptionNews">
+
+            <h3
+              id="formSubscriptionNews"
+              class="visually-hidden">
+              Оставьте адрес своей электронной почты, чтобы получать новости о нашем музее
+            </h3>
+
+            <label
+              for="userEmail">
+              Введите E-mail:
+            </label>
+
+            <input
+              required
+              id="userEmail"
+              aria-label="Email"
+              type="email"
+              aria-required="true"
+              aria-describedby="emailInputError">
+
+            <span
+              class="error"
+              id="emailInputError">
+
+              Кажется, вы ошиблись. Введите email снова, пожалуйста.
+            </span>
+
+            <input
+              id="userPersonalData"
+              type="checkbox"
+              name="agreement">
+
+            <label
+              for="userPersonalData">
+              Согласен на обработку персональных данных
+            </label>
+
+            <button
+              aria-label="После нажатия на эту кнопку ваша заполненная форма отправилась"
+              type="button">
+              Подписаться
+            </button>
+          </form>
+        </section>
+      </div>
+    </footer>
+
+    <div
+      tabindex="-1"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalHeading"
+      class="modal-login">
+
+      <h2
+        id="modalHeading"
+        class="modal-login__heading">
+        Войти в личный кабинет
+      </h2>
+
+      <form
+        aria-labelledby="formLoginHeading">
+
+        <h3
+          id="formLoginHeading"
+          class="visually-hidden">
+          Форма для входа в личный кабинет
+        </h3>
+
+        <label
+          for="userLogin">
+          Введите логин:
+        </label>
+
+        <input
+          required
+          id="userLogin"
+          aria-label="Логин"
+          type="text"
+          aria-required="true"
+          aria-describedby="textInputLoginError">
+
+        <span
+          class="error"
+          id="textInputLoginError">
+
+          Кажется, вы ошиблись. Введите логин снова, пожалуйста.
+        </span>
+
+        <label
+          for="userPassword">
+          Введите пароль:
+        </label>
+
+        <input
+          required
+          id="userPassword"
+          aria-label="Пароль"
+          type="text"
+          aria-required="true"
+          aria-describedby="textInputPasswordError">
+
+        <span class="error" id="textInputPasswordError">
+
+          Кажется, вы ошиблись. Введите пароль снова, пожалуйста.
+        </span>
+      </form>
+
+      <button
+        type="button"
+        aria-label="После нажатии на эту кнопку ваша форма была отправлена и вы попали на страницу личного кабинета"
+        class="modal-login__enter">
+        Войти
+      </button>
+
+      <button
+        type="button"
+        aria-label="Закрыть окно"
+        class="modal-login__close">
+        Х
+      </button>
+    </div>
+  </body>
 </html>
