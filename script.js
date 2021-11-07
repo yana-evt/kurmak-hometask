@@ -29,3 +29,67 @@ next.addEventListener('click', e => {
 prev.addEventListener('click', e => {
   prevSlide();
 } )
+
+////
+const KEYCODE= {
+  ESC: 27,
+};
+
+const dialog = document.querySelector('.modal-login');
+const dialogMask = document.querySelector('.modal-login__mask');
+
+let previouslyActiveElement;
+
+document.querySelector('.button-login-open').addEventListener('click', openDialog)
+
+function openDialog() {
+  previouslyActiveElement = document.activeElement;
+
+  Array.from(document.body.children).forEach(child => {
+    if (child !== dialog) {
+      child.inert = true;
+    }
+  });
+
+  dialog.classList.add('opened');
+  dialogMask.classList.add('opened');
+
+  dialogMask.addEventListener('click', closeDialog);
+  dialog.querySelector('.modal-login__enter').addEventListener('click', handleEnterButtonClick);
+  dialog.querySelector('.modal-login__close').addEventListener('click', closeDialog);
+  document.addEventListener('keydown', checkCloseDialog);
+
+  dialog.querySelector('.modal-login__input').focus();
+}
+
+function handleEnterButtonClick() {
+
+
+  alert('Logged in');
+
+  closeDialog();
+}
+
+function closeDialog() {
+  dialogMask.removeEventListener('click', closeDialog);
+  dialog.querySelector('.modal-login__enter').removeEventListener('click', handleEnterButtonClick);
+  dialog.querySelector('.modal-login__close').removeEventListener('click', closeDialog);
+  document.removeEventListener('keydown', checkCloseDialog);
+
+  Array.from(document.body.children).forEach(child => {
+    if (child !== dialog) {
+      child.inert = false;
+    }
+  });
+
+  dialog.classList.remove('opened');
+  dialogMask.classList.remove('opened');
+
+  previouslyActiveElement.focus();
+}
+
+function checkCloseDialog(event) {
+  if (event.keyCode === KEYCODE.ESC) {
+    closeDialog();
+  }
+}

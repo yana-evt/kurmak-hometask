@@ -23,8 +23,6 @@
 
   <body
     class="body">
-  <div
-    class="mask">
 
     <header
       class="header">
@@ -103,7 +101,8 @@
 
         <button
           type="button"
-          aria-haspopup="dialog">
+          aria-haspopup="dialog"
+          class="button-login-open">
 
           <span
             class="visually-hidden">
@@ -961,7 +960,10 @@
         Х
       </button>
     </div>
-  </div>
+    <div
+      class="modal-login__mask">
+    </div>
+  <script src="node_modules/wicg-inert/dist/inert.min.js"></script>
   <script src="script.js"></script>
   </body>
 </html>
