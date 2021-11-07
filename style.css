@@ -106,6 +106,17 @@ body {
   display: flex;
 }
 
+.header__lang,
+.header__search,
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.lang__button + .lang__button {
+  margin-left: 16px;
+}
+
 /* Nav */
 
 .nav__list {
@@ -144,6 +155,7 @@ body {
   border-radius: 24px;
   padding-left: 24px;
   padding-right: 24px;
+  margin-right: 16px;
   background-color: var(--light-bg);
 }
 
@@ -151,6 +163,7 @@ body {
   font-size: var(--basic-font-size);
   padding-left: 10px;
   padding-right: 10px;
+  margin-right: 32px;
   height: 48px;
   border: 2px solid var(--basic-black);
   border-radius: 4px;
@@ -164,6 +177,14 @@ body {
 
 .search__submit:active {
   opacity: 0.7;
+}
+
+/* Button login */
+
+.button-login-open {
+  border: none;
+  background-color: var(--basic-white);
+  margin-left: 32px;
 }
 
 /* Skiplinks */
@@ -269,8 +290,8 @@ body {
   display: block;
   width: 76px;
   height: 76px;
-  background-color: var(--accent-bg);
-  background-image: url("img/feedback-slider-arrow.svg");
+  background-color: var(--basic-white);
+  background-image: url("img/arrow.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   cursor: pointer;
@@ -343,6 +364,19 @@ body {
 .main__about-museum {
   padding-left: var(--padding-main);
   padding-right: var(--padding-main);
+}
+
+.museum-buildings__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  grid-gap: 48px;
+  width: 1032px;
+  margin: 0 auto;
+}
+
+.museum-buildings__card {
+  width: 312px;
 }
 
 /* Museum buildings card */
