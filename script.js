@@ -46,7 +46,7 @@ function openDialog() {
   previouslyActiveElement = document.activeElement;
 
   Array.from(document.body.children).forEach(child => {
-    if (child !== dialog) {
+    if (child !== dialog && child !== dialogMask) {
       child.inert = true;
     }
   });
@@ -77,7 +77,7 @@ function closeDialog() {
   document.removeEventListener('keydown', checkCloseDialog);
 
   Array.from(document.body.children).forEach(child => {
-    if (child !== dialog) {
+    if (child !== dialog && child !== dialogMask) {
       child.inert = false;
     }
   });
