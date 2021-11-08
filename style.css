@@ -629,7 +629,8 @@ body {
   cursor: pointer;
 }
 
-.modal-login__mask {
+.modal-login__mask,
+.museum-history__mask {
   display: none;
   position: fixed;
   top: 0;
@@ -642,12 +643,13 @@ body {
   z-index: 100;
 }
 
-.modal-login__mask.opened {
+.modal-login__mask.opened,
+.museum-history__mask.opened {
   display: block;
 }
 
 .error {
-  /*visibility: hidden;*/
+  visibility: hidden;
   color: var(--alert-text);
   font-size: var(--s-font-size);
 }

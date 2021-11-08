@@ -114,3 +114,15 @@ function openTab(evt, tabName) {
 }
 
   document.getElementById("heading1").click();
+
+// const museumHistory = document.querySelector('.about-museum__history');
+// const museumHistoryMask = document.querySelector('.museum-history__mask');
+//
+// function historyMask() {
+//
+//   if(museumHistory.classList.contains("about-museum__tab--active")) {
+//     museumHistoryMask.classList.add('opened');
+//   }
+// }
+//
+// historyMask();
