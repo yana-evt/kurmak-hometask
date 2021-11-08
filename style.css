@@ -384,6 +384,15 @@ body {
   background-color: var(--basic-buttons-bg);
 }
 
+.tabcontent {
+  animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .museum-buildings__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

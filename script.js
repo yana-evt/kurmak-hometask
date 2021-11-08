@@ -112,3 +112,5 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " about-museum__tab--active";
 }
+
+  document.getElementById("heading1").click();
