@@ -5,7 +5,7 @@
   --mask-bg: rgba(0, 0, 0, 0.43);
 
   --light-bg: #F9F9FB;
-  --accent-bg: #5D16D5;
+  --accent-bg: #703dc6;
 
   --basic-text: #000000;
   --invertedBasic-text: #FFFFFF;
@@ -13,6 +13,9 @@
 
   --basic-buttons-bg: #C7D2E9;
   --basic-buttons-bg-hover: #9BAFD8;
+  --basic-buttons-bg-active: #8B9DC2;
+  --accent-buttons-bg-hover: #5D16D5;
+  --accent-buttons-bg-active: #370d7f;
 
   --basic-white: #FFFFFF;
   --basic-black: #000000;
@@ -62,14 +65,12 @@ ul {
 body {
   padding: 0;
   font-family: var(--main-font);
-  font-size: var(--basic-font-size);
-  line-height: var(--basic-line-height);
   font-weight: 400;
   color: var(--basic-text);
   background-color: var(--basic-bg);
 
   min-height: 100%;
-  /*min-width: 1440px;*/
+  min-width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
@@ -87,6 +88,13 @@ body {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/* Headings */
+
+.heading-big {
+  font-size: var(--xl-font-size);
+  line-height: var(--xl-line-height);
 }
 
 /* Header */
@@ -112,7 +120,7 @@ body {
 }
 
 .lang__button + .lang__button {
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 /* Nav */
@@ -142,7 +150,11 @@ body {
 
 .nav__link:hover {
   background-color: var(--basic-buttons-bg);
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
+}
+
+.nav__link:active {
+  background-color: var(--basic-buttons-bg-hover);
 }
 
 /* Search */
@@ -172,6 +184,7 @@ body {
 
 .search__submit:hover {
   background-color: var(--basic-buttons-bg);
+  transition: background-color 0.1s ease-in-out;
   cursor: pointer;
 }
 
@@ -183,8 +196,19 @@ body {
 
 .button-login-open {
   border: none;
-  background-color: var(--basic-white);
+  background-color: transparent;
   margin-left: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-login-open:hover {
+  background-color: var(--basic-buttons-bg);
+  transition: background-color 0.1s ease-in-out;
+}
+
+.button-login-open:active {
+  background-color: var(--basic-buttons-bg-hover);
 }
 
 /* Skiplinks */
@@ -193,7 +217,7 @@ body {
   position: absolute;
   top: -200px;
   left: 2px;
-  transition: top 0.2s;
+  transition: top 0.1s;
 }
 
 .skiplink:focus {
@@ -219,7 +243,8 @@ body {
 /* Blue-control */
 
 .blue-control {
-  font-size: 22px;
+  font-size: var(--basic-font-size);
+  line-height: var(--basic-line-height);
   color: var(--basic-black);
   background-color: var(--basic-buttons-bg);
   padding: 16px;
@@ -230,15 +255,21 @@ body {
 
 .blue-control:hover {
   background-color: var(--basic-buttons-bg-hover);
+  transition: background-color 0.1s ease-in-out;
+}
+
+.blue-control:active {
+  background-color: var(--basic-buttons-bg-active);
 }
 
 .blue-control--active {
   text-decoration: none;
+  background-color: var(--basic-buttons-bg-hover);
   cursor: default;
 }
 
 .blue-control--active:hover {
-  background-color: var(--basic-buttons-bg);
+  background-color: var(--basic-buttons-bg-hover);
 }
 
 /* Slider */
@@ -292,21 +323,22 @@ body {
   border: none;
   display: block;
   width: 76px;
-  height: 76px;
+  height: 106px;
   background-color: var(--basic-white);
   background-image: url("img/arrow.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 .button:hover {
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
+  background-color: var(--basic-buttons-bg);
+  transition: background-color 0.1s ease-in-out;
 }
 
 .button:active {
-  opacity: 0.5;
+  background-color: var(--basic-buttons-bg-hover);
 }
 
 .button--prev {
@@ -343,6 +375,8 @@ body {
   bottom: 84px;
   display: block;
   padding: 18px 40px;
+  font-size: var(--basic-font-size);
+  line-height: var(--basic-line-height);
   color: var(--invertedBasic-text);
   background-color: var(--accent-bg);
   border-radius: 8px;
@@ -351,12 +385,12 @@ body {
 }
 
 .slide__pseudobutton:hover {
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
+  background-color: var(--accent-buttons-bg-hover);
+  transition: background-color 0.1s ease-out;
 }
 
 .slide__pseudobutton:active {
-  opacity: 0.5;
+  background-color: var(--accent-buttons-bg-active);
 }
 
 /* Exhibitions */
@@ -379,16 +413,16 @@ body {
 
 .about-museum__tab--active {
   text-decoration: none;
+  background-color: var(--basic-buttons-bg-hover);
   cursor: default;
-  opacity: 0.7;
 }
 
-.about-museum__tab--active:hover {
-  background-color: var(--basic-buttons-bg);
+.about-museum__tab-list {
+  margin-bottom: 48px;
 }
 
 .tabcontent {
-  animation: fadeEffect 1s;
+  animation: fadeEffect 0.2s;
 }
 
 @keyframes fadeEffect {
@@ -417,6 +451,17 @@ body {
 
 .museum-buildings__card {
   position: relative;
+}
+
+.museum-buildings__card-heading {
+  font-size: var(--l-font-size);
+  line-height: var(--l-line-height);
+  text-transform: uppercase;
+}
+
+.museum-buildings__card-address {
+  font-size: var(--s-font-size);
+  line-height: var(--s-line-height);
 }
 
 .museum-buildings__card-link:after {
@@ -576,12 +621,12 @@ body {
 }
 
 .subscription__button:hover {
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
+  background-color: var(--accent-buttons-bg-hover);
+  transition: background-color 0.1s ease-out;
 }
 
 .subscription__button:active {
-  opacity: 0.5;
+  background-color: var(--accent-buttons-bg-active);
 }
 
 /* Modal */

@@ -290,7 +290,9 @@
         aria-label="Пока здесь пусто, но скоро будет секция с выставками и событиями и фильтром впридачу"
         class="main__exhibitions">
 
-        <h2>
+        <h2
+          class="heading-big">
+
           Выставки и события
         </h2>
       </section>
@@ -302,7 +304,7 @@
 
         <h2
           id="headingAboutMuseum"
-          class="about-museum__heading">
+          class="about-museum__heading heading-big">
           Музей
         </h2>
 
@@ -617,7 +619,7 @@
 
         <h2
           id="headingStreams"
-          class="streams-heading">
+          class="streams-heading heading-big">
           Онлайн-трансляции
 
           <a
@@ -645,7 +647,8 @@
         class="main__zoom-exhibitions">
 
         <h2
-          id="headingZoomExhibitions">
+          id="headingZoomExhibitions"
+          class="heading-big">
           Экскурсии и лекции в прямом эфире
         </h2>
 
@@ -827,6 +830,7 @@
                 required
                 id="userEmail"
                 type="email"
+                name="userEmail"
                 aria-required="true"
                 aria-describedby="emailInputError"
                 class="subscription__item subscription__input-email">
@@ -835,7 +839,7 @@
                 id="emailInputError"
                 class="error">
 
-                Ошибка: неверно введен e-mail.
+                Ошибка: введите e-mail.
               </span>
 
               <div
@@ -845,6 +849,7 @@
                   id="userPersonalData"
                   type="checkbox"
                   name="agreement"
+                  aria-describedby="personalDataError"
                   class="subscription__input-check">
 
                 <label
@@ -853,6 +858,13 @@
                   Согласен на обработку персональных данных
                 </label>
               </div>
+
+              <span
+                id="personalDataError"
+                class="error">
+
+                Ошибка: введите e-mail.
+              </span>
 
               <button
                 aria-label="После нажатия на эту кнопку ваша заполненная форма отправится"
@@ -902,6 +914,7 @@
             id="userLogin"
             aria-label="Логин"
             type="text"
+            name="userLogin"
             aria-required="true"
             aria-describedby="textInputLoginError"
             class="modal-login__input">
@@ -910,7 +923,7 @@
             id="textInputLoginError"
             class="error">
 
-            Ошибка: неверный логин.
+            Ошибка: введите логин.
           </span>
         </div>
 
@@ -928,6 +941,7 @@
             id="userPassword"
             aria-label="Пароль"
             type="text"
+            name="userPassword"
             aria-required="true"
             aria-describedby="textInputPasswordError"
             class="modal-login__input">
@@ -936,7 +950,7 @@
             id="textInputPasswordError"
             class="error">
 
-            Ошибка: неверный пароль.
+            Ошибка: введите пароль.
           </span>
         </div>
       </form>
