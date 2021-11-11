@@ -71,7 +71,7 @@ body {
   background-color: var(--basic-bg);
 
   min-height: 100%;
-  min-width: 1440px;
+  /*min-width: 1440px;*/
   margin: 0 auto;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
@@ -98,8 +98,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 118px;
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 .header__wrapper-right {
@@ -122,8 +122,10 @@ body {
 .nav__list {
   display: flex;
   justify-content: space-between;
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
+  font-size: var(--m-font-size);
+  line-height: var(--m-line-height);
 }
 
 .nav__item {
@@ -245,6 +247,8 @@ body {
 
 .current-events {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .slider {
@@ -253,7 +257,7 @@ body {
   width: 1032px;
   height: 600px;
   background-color: var(--basic-white);
-  margin: 0 auto;
+  order: 2;
 }
 
 .slide {
@@ -307,17 +311,22 @@ body {
 }
 
 .button--prev {
-  position: absolute;
-  top: 50%;
-  left: 200px;
-  transform: rotate(180deg) translateY(30%);
+  transform: rotate(180deg);
 }
 
-.button--next {
-  position: absolute;
-  top: 50%;
-  right: 200px;
-  transform: translateY(-30%);
+.slide__button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.slide__button-wrapper--prev {
+  order: 1;
+  margin-right: 16px;
+}
+
+.slide__button-wrapper--next {
+  order: 3;
+  margin-left: 16px;
 }
 
 .slide__link {
@@ -359,15 +368,15 @@ body {
 /* Exhibitions */
 
 .main__exhibitions {
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 /* About museum */
 
 .main__about-museum {
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 .about-museum__tab {
@@ -429,24 +438,30 @@ body {
 /* Streams */
 
 .main__streams {
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 /* Zoom exhibitions */
 
 .main__zoom-exhibitions {
-  padding-left: var(--padding-main);
-  padding-right: var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 /* Footer */
 
 .footer {
+  background-color: var(--secondary-bg);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.footer__wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: var(--secondary-bg);
-  padding: 70px var(--padding-main);
+  width: 1032px;
+  margin: 0 auto;
 }
 
 /* Nav secondary */
