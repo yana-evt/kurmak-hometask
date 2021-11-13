@@ -44,7 +44,7 @@
           <span
             id="logoLinkText"
             class="visually-hidden">
-            Перейти на главную страницу музея
+            Государственный музей изобразительных искусств имени А.С.Пушкина
           </span>
           <svg width="200" height="42" viewBox="0 0 200 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="200" height="42" fill="url(#pattern0)"/>
@@ -866,6 +866,13 @@
                 Ошибка: введите e-mail.
               </span>
 
+              <span
+                id="personalDataSuccess"
+                class="success">
+
+                Вы подписаны на наши новости!
+              </span>
+
               <button
                 aria-label="После нажатия на эту кнопку ваша заполненная форма отправится"
                 type="button"
@@ -892,7 +899,8 @@
       </h2>
 
       <form
-        aria-labelledby="formLoginHeading">
+        aria-labelledby="formLoginHeading"
+        autocomplete="on">
 
         <h3
           id="formLoginHeading"
@@ -913,10 +921,11 @@
             required
             id="userLogin"
             aria-label="Логин"
-            type="text"
-            name="userLogin"
+            type="email"
+            name="email"
             aria-required="true"
             aria-describedby="textInputLoginError"
+            autocomplete="username"
             class="modal-login__input">
 
           <span
@@ -940,10 +949,11 @@
             required
             id="userPassword"
             aria-label="Пароль"
-            type="text"
-            name="userPassword"
+            type="password"
+            name="current-password"
             aria-required="true"
             aria-describedby="textInputPasswordError"
+            autocomplete="current-password"
             class="modal-login__input">
 
           <span
@@ -956,7 +966,7 @@
       </form>
 
       <button
-        type="button"
+        type="submit"
         aria-label="После нажатии на эту кнопку ваша форма была отправлена и вы попали на страницу личного кабинета"
         class="modal-login__enter blue-control">
         Войти
@@ -971,9 +981,6 @@
     </div>
     <div
       class="modal-login__mask">
-    </div>
-    <div
-      class="museum-history__mask">
     </div>
   <script src="inert.min.js"></script>
   <script src="script.js"></script>

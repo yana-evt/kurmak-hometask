@@ -411,6 +411,10 @@ body {
   text-decoration: underline;
 }
 
+.about-museum__tab + .about-museum__tab {
+  margin-left: 8px;
+}
+
 .about-museum__tab--active {
   text-decoration: none;
   background-color: var(--basic-buttons-bg-hover);
@@ -706,4 +710,8 @@ body {
   visibility: hidden;
   color: var(--alert-text);
   font-size: var(--s-font-size);
+}
+
+.error.show {
+  visibility: visible;
 }
