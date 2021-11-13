@@ -812,7 +812,8 @@
 
             <form
               aria-labelledby="formSubscriptionNews"
-              class="subscription__form">
+              class="subscription__form"
+              autocomplete="on">
 
               <h3
                 id="formSubscriptionNews"
@@ -830,7 +831,8 @@
                 required
                 id="userEmail"
                 type="email"
-                name="userEmail"
+                name="email"
+                autocomplete="username"
                 aria-required="true"
                 aria-describedby="emailInputError"
                 class="subscription__item subscription__input-email">
@@ -863,7 +865,7 @@
                 id="personalDataError"
                 class="error">
 
-                Ошибка: введите e-mail.
+                Ошибка: необходимо согласие
               </span>
 
               <span
@@ -874,6 +876,7 @@
               </span>
 
               <button
+                id="newsletterSubscribe"
                 aria-label="После нажатия на эту кнопку ваша заполненная форма отправится"
                 type="button"
                 class="subscription__item subscription__button">
@@ -921,8 +924,8 @@
             required
             id="userLogin"
             aria-label="Логин"
-            type="email"
-            name="email"
+            type="text"
+            name="username"
             aria-required="true"
             aria-describedby="textInputLoginError"
             autocomplete="username"

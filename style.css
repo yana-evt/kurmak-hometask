@@ -715,3 +715,11 @@ body {
 .error.show {
   visibility: visible;
 }
+
+.success {
+  visibility: hidden;
+}
+
+.success.show {
+  visibility: visible;
+}

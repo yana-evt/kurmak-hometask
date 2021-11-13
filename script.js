@@ -31,6 +31,7 @@ prev.addEventListener('click', e => {
 } )
 
 // Dialog
+
 const KEYCODE= {
   ENTER: 13,
   ESC: 27,
@@ -74,6 +75,8 @@ function handlePasswordInput() {
 
 function handleLoginPasswordKeydown(event) {
   if (event.keyCode === KEYCODE.ENTER) {
+    event.stopPropagation();
+    event.preventDefault();
     Promise.resolve().then(handleLoginRequest)
   }
 }
@@ -143,6 +146,65 @@ function closeDialog() {
 function checkCloseDialog(event) {
   if (event.keyCode === KEYCODE.ESC) {
     closeDialog();
+  }
+}
+
+// Email
+
+document.querySelector('#userEmail').addEventListener('input', handleEmailInput);
+document.querySelector('#userEmail').addEventListener('keydown', handleEmailKeydown);
+
+function handleEmailInput() {
+  document.querySelector('#personalDataSuccess').classList.remove('show');
+  document.querySelector('#emailInputError').classList.remove('show');
+}
+
+function handleEmailKeydown(event) {
+  if (event.keyCode === KEYCODE.ENTER) {
+    event.stopPropagation();
+    event.preventDefault();
+    Promise.resolve().then(handleSubscribeRequest);
+  }
+}
+
+document.querySelector('#userPersonalData').addEventListener('input', handlePersonalDataInput);
+
+function handlePersonalDataInput() {
+  document.querySelector('#personalDataSuccess').classList.remove('show');
+  document.querySelector('#personalDataError').classList.remove('show');
+}
+
+document.querySelector('#newsletterSubscribe').addEventListener('click', handleNewsletterSubscribeButtonClick);
+
+function handleNewsletterSubscribeButtonClick() {
+  Promise.resolve().then(handleSubscribeRequest);
+}
+
+function handleSubscribeRequest() {
+  let personalDataSuccess = document.querySelector('#personalDataSuccess');
+  let emailInputError = document.querySelector('#emailInputError');
+  let personalDataError = document.querySelector('#personalDataError');
+
+  personalDataSuccess.classList.remove('show');
+  emailInputError.classList.remove('show');
+  personalDataError.classList.remove('show');
+
+  let emailInput = document.querySelector('#userEmail');
+  let personalDataInput = document.querySelector('#userPersonalData');
+
+  let emailIsMissing = emailInput.value == null || emailInput.value === '';
+  let personalDataIsMissing = !personalDataInput.checked;
+
+  if (emailIsMissing) {
+    emailInputError.classList.add('show');
+  }
+
+  if (personalDataIsMissing) {
+    personalDataError.classList.add('show');
+  }
+
+  if (!emailIsMissing && !personalDataIsMissing) {
+    personalDataSuccess.classList.add('show');
   }
 }
 
