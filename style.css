@@ -634,7 +634,7 @@ body {
   font-size: var(--m-font-size);
   line-height: var(--m-line-height);
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .subscription__button:hover {
