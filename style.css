@@ -9,7 +9,8 @@
 
   --basic-text: #000000;
   --invertedBasic-text: #FFFFFF;
-  --alert-text: tomato;
+  --alert-text: #fa0a0a;
+  --success-text: #11ab1e;
 
   --basic-buttons-bg: #C7D2E9;
   --basic-buttons-bg-hover: #9BAFD8;
@@ -443,12 +444,23 @@ body {
   margin: 0 auto;
 }
 
-.about-museum__history {
-
-}
-
 .museum-buildings__card {
   width: 312px;
+  min-height: 318px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.museum-buildings__card:hover {
+  background-color: #f9f9fb;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.museum-buildings__card-link {
+  font-size: var(--l-font-size);
+  line-height: var(--l-line-height);
+  color: #008fa3;
 }
 
 /* Museum buildings card */
@@ -573,7 +585,7 @@ body {
   font-size: var(--l-font-size);
   line-height: var(--l-line-height);
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .subscription__item + .subscription__item {
@@ -582,7 +594,7 @@ body {
 
 .subscription__wrapper {
   display: flex;
-  margin-top: 16px;
+  /*margin-top: 16px;*/
 }
 
 .subscription__input-check {
@@ -622,6 +634,7 @@ body {
   font-size: var(--m-font-size);
   line-height: var(--m-line-height);
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .subscription__button:hover {
@@ -631,6 +644,11 @@ body {
 
 .subscription__button:active {
   background-color: var(--accent-buttons-bg-active);
+}
+
+.subscription-button__wrapper {
+  display: flex;
+  align-items: baseline;
 }
 
 /* Modal */
@@ -650,6 +668,11 @@ body {
   z-index: 150;
 }
 
+.modal-login__heading {
+  font-size: var(--form-font-size);
+  line-height: var(--form-line-height);
+}
+
 .modal-login.opened {
   display: flex;
 }
@@ -660,8 +683,8 @@ body {
 }
 
 .modal-login__label {
-  font-size: var(--form-font-size);
-  line-height: var(--form-line-height);
+  font-size: var(--l-font-size);
+  line-height: var(--l-line-height);
   padding-bottom: 10px;
 }
 
@@ -679,12 +702,22 @@ body {
   right: 20px;
   color: var(--invertedBasic-text);
   background-color: var(--accent-bg);
+  font-size: var(--l-font-size);
   display: block;
   width: 48px;
   height: 48px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.modal-login__close:hover {
+  background-color: var(--accent-buttons-bg-hover);
+  transition: background-color 0.1s ease-out;
+}
+
+.modal-login__close:active {
+  background-color: var(--accent-buttons-bg-active);
 }
 
 .modal-login__mask,
@@ -710,6 +743,10 @@ body {
   visibility: hidden;
   color: var(--alert-text);
   font-size: var(--s-font-size);
+  line-height: var(--s-line-height);
+  font-weight: 800;
+  margin-top: 4px;
+  margin-bottom: 16px;
 }
 
 .error.show {
@@ -718,8 +755,19 @@ body {
 
 .success {
   visibility: hidden;
+  color: var(--success-text);
+  font-size: var(--s-font-size);
+  line-height: var(--s-line-height);
+  font-weight: 800;
+  margin-top: 4px;
+  margin-bottom: 16px;
 }
 
 .success.show {
   visibility: visible;
+}
+
+.error__email {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

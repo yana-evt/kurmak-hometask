@@ -207,7 +207,9 @@
                 class="slide__link">
 
                 <img
-                  src="img/Rectangle%202.jpg"
+                  width="1032"
+                  height="600"
+                  src="img/slider_1.jpg"
                   alt="Выставка «От Дюрера до Матисса» проходит с 10 июля по 1 ноября в Главном здании музея">
               </a>
 
@@ -349,7 +351,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207.png"
+                src="img/icon_museum_1.png"
                 alt=""
                 width="312"
                 height="148"
@@ -387,7 +389,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207-2.png"
+                src="img/icon_museum_2.png"
                 alt=""
                 width="312"
                 height="148"
@@ -425,7 +427,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207-3.png"
+                src="img/icon_museum_3.png"
                 alt=""
                 width="312"
                 height="148"
@@ -463,7 +465,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207-4.png"
+                src="img/icon_museum_4.png"
                 alt=""
                 width="312"
                 height="148"
@@ -501,7 +503,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207-5.png"
+                src="img/icon_museum_5.png"
                 alt=""
                 width="312"
                 height="148"
@@ -539,7 +541,7 @@
               class="museum-buildings__card">
 
               <img
-                src="img/Rectangle%207-6.png"
+                src="img/icon_museum_6.png"
                 alt=""
                 width="312"
                 height="148"
@@ -839,9 +841,9 @@
 
               <span
                 id="emailInputError"
-                class="error">
+                class="error error__email">
 
-                Ошибка: введите e-mail.
+                Ошибка: введите e-mail
               </span>
 
               <div
@@ -863,25 +865,30 @@
 
               <span
                 id="personalDataError"
-                class="error">
+                class="error error__email">
 
                 Ошибка: необходимо согласие
               </span>
 
-              <span
-                id="personalDataSuccess"
-                class="success">
+              <div
+                class="subscription-button__wrapper">
 
-                Вы подписаны на наши новости!
-              </span>
+                <button
+                  id="newsletterSubscribe"
+                  aria-label="После нажатия на эту кнопку ваша заполненная форма отправится"
+                  type="button"
+                  class="subscription__item subscription__button">
 
-              <button
-                id="newsletterSubscribe"
-                aria-label="После нажатия на эту кнопку ваша заполненная форма отправится"
-                type="button"
-                class="subscription__item subscription__button">
-                Подписаться
-              </button>
+                  Подписаться
+                </button>
+
+                <span
+                  id="personalDataSuccess"
+                  class="success">
+
+                  Вы подписаны на наши новости!
+                </span>
+              </div>
             </form>
           </section>
         </div>
@@ -935,7 +942,7 @@
             id="textInputLoginError"
             class="error">
 
-            Ошибка: введите логин.
+            Ошибка: введите логин
           </span>
         </div>
 
@@ -963,7 +970,7 @@
             id="textInputPasswordError"
             class="error">
 
-            Ошибка: введите пароль.
+            Ошибка: введите пароль
           </span>
         </div>
       </form>
